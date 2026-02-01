@@ -7,7 +7,7 @@ interface IEncodeResponseViewProps {
     response: IEncodeResponse | null;
 }
 
-const EncodeResponseViewComponent = ({ response }: IEncodeResponseViewProps): JSX.Element | null => {
+const EncodeResponseViewComponent = ({ response }: IEncodeResponseViewProps): React.ReactElement | null => {
     if (!response) return null;
 
     return <Box>

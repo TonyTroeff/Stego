@@ -9,7 +9,7 @@ import { IAlgorithmConfig } from "@stego/models/IAlgorithmConfig";
 
 interface IEncryptionDetails {
     state: IFormState<IAlgorithmConfig>;
-    render: () => JSX.Element;
+    render: () => React.ReactElement;
 }
 
 export function useEncryptionDetails(): IEncryptionDetails {
@@ -22,7 +22,7 @@ export function useEncryptionDetails(): IEncryptionDetails {
         if (!newValue) setSecretFormState(undefined);
     }, []);
 
-    const renderEncryptionDetails = useCallback((): JSX.Element => {
+    const renderEncryptionDetails = useCallback((): React.ReactElement => {
         return <>
             <Box>
                 <BitsCountInput currentValue={bitsPerPixel} onChange={setBitsPerPixel} />

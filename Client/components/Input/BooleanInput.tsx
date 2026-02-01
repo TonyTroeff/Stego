@@ -4,7 +4,7 @@ import { IFormControlProps } from "@stego/interfaces/IFormControlProps";
 import { IValueChangeProps } from "@stego/interfaces/IValueChangeProps";
 
 type BooleanInputProps = IValueChangeProps<boolean> & IFormControlProps;
-const BooleanInputComponent = ({ currentValue, label, onChange }: BooleanInputProps): JSX.Element => {
+const BooleanInputComponent = ({ currentValue, label, onChange }: BooleanInputProps): React.ReactElement => {
     const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => onChange?.(e.target.checked), [onChange]);
     return <FormControlLabel control={<Checkbox value={currentValue} onChange={handleChange} />} label={label} />;
 };

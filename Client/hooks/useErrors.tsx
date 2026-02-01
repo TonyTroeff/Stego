@@ -5,7 +5,7 @@ export const useErrors = () => {
     const [errors, setErrors] = useState<string[]>([]);
 
     const clearErrors = useCallback((): void => setErrors([]), []);
-    const render = useCallback((): JSX.Element => {
+    const render = useCallback((): React.ReactElement => {
         return <>{errors.map((e, index) => <Alert key={index} severity="error">{e}</Alert>)}</>;
     }, [errors]);
 

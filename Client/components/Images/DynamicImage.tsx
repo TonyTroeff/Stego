@@ -10,7 +10,7 @@ interface IDynamicImageProps extends IExtensibleProps {
     alt: string;
 }
 
-const DynamicImageComponent = ({ alt, className, image, onClick }: IDynamicImageProps): JSX.Element | null => {
+const DynamicImageComponent = ({ alt, className, image, onClick }: IDynamicImageProps): React.ReactElement | null => {
     const src = useMemo((): string | undefined => buildFileUrl(image?.id), [image]);
 
     if (!src) return null;

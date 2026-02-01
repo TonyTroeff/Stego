@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { INumericInputProps } from "@stego/interfaces/IFormControlProps";
 
 type NumericInputProps = IValueChangeProps<number> & INumericInputProps;
-const NumericInputComponent = ({ currentValue, label, onChange, min, max }: NumericInputProps): JSX.Element => {
+const NumericInputComponent = ({ currentValue, label, onChange, min, max }: NumericInputProps): React.ReactElement => {
     const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         if (!onChange) return;
 

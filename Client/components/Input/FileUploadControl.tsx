@@ -10,7 +10,7 @@ import { useErrors } from "@stego/hooks/useErrors";
 const FileUploadInput = styled("input")({ display: "none" });
 
 type FileUploadControlProps = IValueChangeProps<IFileData | null>;
-const FileUploadControlComponent = ({ currentValue, onChange }: FileUploadControlProps): JSX.Element => {
+const FileUploadControlComponent = ({ currentValue, onChange }: FileUploadControlProps): React.ReactElement => {
     const [isLoading, setIsLoading] = useState(false);
     const errors = useErrors();
     const service = useService();

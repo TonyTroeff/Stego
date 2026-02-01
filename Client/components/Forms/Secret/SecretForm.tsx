@@ -7,7 +7,7 @@ import { FormContainer } from "@stego/components/Forms/Common";
 import { Box } from "@mui/material";
 
 type EncodeFormProps = IChangeProps<IFormState<ISecret>>;
-const SecretFormComponent = ({ onChange }: EncodeFormProps): JSX.Element => {
+const SecretFormComponent = ({ onChange }: EncodeFormProps): React.ReactElement => {
     const [secret, setSecret] = useState("");
 
     useEffect((): void => {

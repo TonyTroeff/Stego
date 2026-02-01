@@ -6,7 +6,7 @@ interface IDecodeResponseViewProps {
     response: IDecodeResponse | null;
 }
 
-const DecodeResponseViewComponent = ({ response }: IDecodeResponseViewProps): JSX.Element | null => {
+const DecodeResponseViewComponent = ({ response }: IDecodeResponseViewProps): React.ReactElement | null => {
     if (!response) return null;
 
     return <Box sx={{ wordBreak: "break-all" }}>

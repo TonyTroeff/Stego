@@ -7,10 +7,12 @@ interface ILinkProps extends IParentComponentProps {
     href: string;
 }
 
-const LinkComponent = ({ href, children }: ILinkProps): JSX.Element => {
-    return <NextLink href={href} passHref>
-        <MUILink underline="none">{children}</MUILink>
-    </NextLink>;
+const LinkComponent = ({ href, children }: ILinkProps): React.ReactElement => {
+    return (
+        <MUILink component={NextLink} href={href} underline="none">
+            {children}
+        </MUILink>
+    );
 };
 
 export const Link = React.memo(LinkComponent);

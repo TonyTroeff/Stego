@@ -7,7 +7,7 @@ import OriginalFlowers from "@stego/assets/images/flowers-original.jpg";
 import EncodedFlowers from "@stego/assets/images/flowers-encoded.png";
 import Image from "next/image";
 
-const HomeComponent = (): JSX.Element => {
+const HomeComponent = (): React.ReactElement => {
     return <Box sx={{ overflow: "hidden" }}>
         <Typography className={styles.Animated} sx={{ textTransform: "uppercase" }} align="center" variant="h1">stego</Typography>
         <Typography className={styles.Animated} align="center" variant="h3" gutterBottom>Try at software [Tony Troeff]</Typography>

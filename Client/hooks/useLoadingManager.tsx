@@ -6,7 +6,7 @@ export const useLoadingManager = () => {
 
     const startLoading = useCallback((): void => setIsLoading(true), []);
     const stopLoading = useCallback((): void => setIsLoading(false), []);
-    const render = useCallback((): JSX.Element => {
+    const render = useCallback((): React.ReactElement => {
         if (isLoading) return <CircularProgress />;
         return <></>;
     }, [isLoading]);

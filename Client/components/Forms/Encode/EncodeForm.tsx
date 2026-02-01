@@ -9,7 +9,7 @@ import { IFileData } from "@stego/models/common/IFileData";
 import { useEncryptionDetails } from "@stego/components/Forms/Encode/useEncryptionDetails";
 
 type EncodeFormProps = IChangeProps<IFormState<IEncodeRequest>>;
-const EncodeFormComponent = ({ onChange }: EncodeFormProps): JSX.Element => {
+const EncodeFormComponent = ({ onChange }: EncodeFormProps): React.ReactElement => {
     const [image, setImage] = useState<IFileData | null>(null);
     const [message, setMessage] = useState("");
     const encryptionDetails = useEncryptionDetails();

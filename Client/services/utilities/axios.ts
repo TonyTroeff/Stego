@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
+import axios, { AxiosRequestConfig, RawAxiosRequestHeaders } from "axios";
 import { OperationResult } from "../OperationResult";
 
 export interface IRequestOptions {
     params?: unknown;
-    headers?: AxiosRequestHeaders;
+    headers?: RawAxiosRequestHeaders;
     abortController: AbortController;
 }
 
@@ -42,11 +42,8 @@ function constructRequestConfig(options: IRequestOptions | null): AxiosRequestCo
     return config;
 }
 
-
 function setErrors<TResult>(operationResult: OperationResult<TResult>, error: any): void {
     if (!operationResult) return;
-
-    console.log(error)
 
     if (error.response && error.response.data) operationResult.addError(error.response.data.detail);
     else if (error.request) operationResult.addError("No response was received.");
