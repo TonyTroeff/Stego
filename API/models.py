@@ -7,7 +7,8 @@ class SecretInputModel(BaseModel):
 
 class AlgorithmConfig(BaseModel):
     bits_per_pixel: int = Field(ge=1, le=8)
-    secret: SecretInputModel | None
+    # Pydantic v2: Optional fields must have a default value
+    secret: SecretInputModel | None = None
 
 
 algorithm_config_field = Field(default=AlgorithmConfig(bits_per_pixel=1))
