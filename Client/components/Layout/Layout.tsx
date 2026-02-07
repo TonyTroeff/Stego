@@ -2,13 +2,18 @@ import Head from "next/head";
 import React from "react";
 import { IParentComponentProps } from "@stego/interfaces/IParentComponentProps";
 import { createTheme, ThemeProvider } from "@mui/material";
-import { blue, pink } from "@mui/material/colors";
+import { pink } from "@mui/material/colors";
 import { Header } from "@stego/components/Header";
 import styles from "./Layout.module.css";
 
 const theme = createTheme({
     palette: {
-        primary: blue,
+        primary: {
+            main: "#1e3a5f",
+            light: "#2c5282",
+            dark: "#152844",
+            contrastText: "#ffffff"
+        },
         secondary: pink
     },
     spacing: 10
