@@ -50,28 +50,6 @@ When you provide a password:
 - **Material-UI** - Professional UI components
 - **Axios** - HTTP client for API communication
 
-## Project Structure
-
-```
-Stego/
-├── API/                    # Python FastAPI backend
-│   ├── main.py            # Main application with encode/decode endpoints
-│   ├── stego_utils.py     # Core steganography algorithms
-│   ├── encryption.py      # Fernet encryption/decryption
-│   ├── models.py          # Pydantic data models
-│   ├── config.py          # Configuration management
-│   └── requirements.txt   # Python dependencies
-│
-├── Client/                # Next.js/React TypeScript frontend
-│   ├── pages/             # Application routes
-│   ├── components/        # Reusable React components
-│   ├── models/            # TypeScript interfaces
-│   ├── services/          # API service layer
-│   └── package.json       # Node dependencies
-│
-└── README.md
-```
-
 ## Getting Started
 
 ### Prerequisites
@@ -152,62 +130,6 @@ The application will be available at `http://localhost:3000`
 4. (Optional) Adjust bits-per-pixel to match encoding settings
 5. Click **Decode**
 6. View the extracted message
-
-## API Endpoints
-
-### Upload Image
-```http
-POST /upload
-Content-Type: multipart/form-data
-
-# Response
-{
-  "id": "uuid-string"
-}
-```
-
-### Get Image
-```http
-GET /file/{file_id}
-
-# Response: Image file
-```
-
-### Encode Message
-```http
-POST /encode
-Content-Type: application/json
-
-{
-  "file_id": "uuid-string",
-  "message": "Your secret message",
-  "bits_per_pixel": 1,  // Optional: 1-8
-  "secret": "password"  // Optional: For encryption
-}
-
-# Response
-{
-  "file_id": "uuid-string",
-  "bits_changed": 1234
-}
-```
-
-### Decode Message
-```http
-POST /decode
-Content-Type: application/json
-
-{
-  "file_id": "uuid-string",
-  "bits_per_pixel": 1,  // Optional: Must match encoding
-  "secret": "password"  // Optional: If encrypted
-}
-
-# Response
-{
-  "message": "Your secret message"
-}
-```
 
 ## Configuration Options
 
